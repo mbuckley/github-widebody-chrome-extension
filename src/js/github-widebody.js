@@ -8,11 +8,23 @@ const widenDiffContainers = () => {
   }
 }
 
-document.addEventListener("DOMContentLoaded", function onDomChange() {
-  const isGitHub = window.location.href.indexOf("https://github.com") > -1;
-  // make it wider
-  if (isGitHub) {
+const isGitHub = () => {
+  const ghRE = /^https:\/\/github.com\/.+\/pull\/.+\/files$/;
+  return window.location.href.match(ghRE);
+}
+
+const detectAndRun = () => {
+  if (isGitHub()) {
     widenDiffContainers();
     chrome.runtime.sendMessage({ action: 'show-page-action' });
   }
+}
+
+// listen for state change
+document.addEventListener("pjax:complete", function() {
+  widenDiffContainers();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  widenDiffContainers();
 });
