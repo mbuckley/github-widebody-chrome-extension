@@ -1,7 +1,7 @@
 {
   "name": "GitHub Widebody",
   "description": "Lets you adjust the width of the GitHub Files changed code diff containers",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "icons": {
     "128": "icons/icon128.png"
   },
