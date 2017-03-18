@@ -1,7 +1,7 @@
 {
   "name": "github-widebody-chrome-extension",
   "author": "Mike Buckley",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Chrome extension that lets you adjust the width of the GitHub Files changed code diff containers",
   "license": "MIT",
   "devDependencies": {},
